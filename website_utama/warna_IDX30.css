@@ -1,0 +1,68 @@
+
+
+.tombol{
+    background-color:#72d48c;
+    color: #fffF;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    height: 10%;
+    margin: .5%;
+    position: relative;
+    border-radius: 10px;
+    transition: all .5s ease;
+    border: 1px  #000000;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 1%;
+    width: 10%;
+}
+
+.tombol:hover {
+    background-color: #9fd6ae;
+}
+
+body{
+    background-image:url("website.jpg");
+}
+
+.tombol:active {
+    background-color: #3e8e41;
+    transform: translateX(4px);
+}
+
+.SahamIDX30{
+    position: relative;
+    margin-left: 5%;
+    border: 10px solid #72d48c;
+    border-radius: 10px;
+    width: 50%;
+    height: 70%;
+}
+
+.catatan{
+    width: auto;
+    margin-left: 5%;
+    position: absolute;
+    top: 11%;
+    left: 55%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.IsianCatatan{
+    font-size: 70%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.h1{
+    color:#72d48c;
+}
+
+.h1:before{
+    content: "• ";
+}
+
+.h2{
+    color: #524d4d;
+}
+

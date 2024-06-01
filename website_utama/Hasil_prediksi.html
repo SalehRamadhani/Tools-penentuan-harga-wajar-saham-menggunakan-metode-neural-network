@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Tools Penentuan Harga Wajar Saham</title>
+        <link rel="stylesheet" href="warna_hasil.css" />
+    </head>
+    <body>
+        <div class="utama">
+            <a href="isi_data.html">
+                <button class="tombol1">
+                    Isi Ulang Data Saham
+                </button>
+            </a>
+        </div>
+        <div class="hasil_akhir">
+            <h1 class="jud_utama"> Hasil Analisis</h1>
+            <div class="area">
+                <h2 id="resis"></h2>
+                <h2 id="supp"></h2>
+            </div>
+            <div class="Buy">
+                <h2 id="SL"></h2>
+                <h2 id="TP"></h2>
+            </div>
+            <div class="buyUser">
+                <h2 class="userKata">Tentukan Stop Loss sesuai kebutuhan (%)</h2>
+                <h2 class="userKata">Tentukan Take Profit sesuai kebutuhan (%)</h2>
+                <input id="persenUserSL"  class="inputUser" type="number"
+                onkeypress="return hanyaAngka(event)" placeholder="SL%" min="0" max="100"
+                value="15">
+                <input id="persenUserTP"  class="inputUser" type="number"
+                onkeypress="return hanyaAngka(event)" placeholder="TP%" min="0" max="200"
+                value="35">
+                <h2 id="userSL"></h2>
+                <h2 id="userTP"></h2>
+            </div>
+            <div class="tabel_keputusan">
+                <h2 id="FV" class="hargaWajar"></h2>
+            </div>
+        </div>
+        <div class="Keputusan_Akhir">
+            <h1>Keputusan</h1>
+            <h1 id="Keputusan" class="KeputusanCSS"></h1>
+        </div>
+        <div class="ticker">
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                {
+                "symbols": [
+                {
+                    "description": "",
+                    "proName": "IDX:COMPOSITE"
+                },
+                {
+                    "description": "",
+                    "proName": "IDX:IDX30"
+                },
+                {
+                    "description": "",
+                    "proName": "IDX:LQ45"
+                },
+                {
+                    "description": "",
+                    "proName": "IDX:JII"
+                },
+                {
+                    "description": "",
+                    "proName": "FX_IDC:USDIDR"
+                },
+                {
+                    "description": "",
+                    "proName": "IDX:XISR"
+                }
+
+                ],
+                "showSymbolLogo": true,
+                "isTransparent": false,
+                "displayMode": "adaptive",  
+                "colorTheme": "dark",
+                "locale": "id"
+                 }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+        <script src="papaparse.min.js"></script>
+        <script src="index.js"> </script>
+        <script src="ModelTensor.js"></script>
+    </body>
+</html>

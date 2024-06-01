@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <title>Tools Penentuan Harga Wajar Saham</title>
+        <link rel="stylesheet" href="warna_isi_data.css" />
+    </head>
+    <body>
+            <div class="utama">
+                <a href="index.html">
+                    <button class="tombol">Back</button>
+                </a>
+                 <!-- Trading view Chart -->
+                <div  class="tradingview">
+                    <h1>Chart Saham</h1>
+                            <!-- TradingView Widget BEGIN -->
+                            <div class="tradingview-widget-container" style="height:100%;width:100%">
+                                <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+                                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+                                {
+                                    "autosize": true,
+                                    "symbol": "IDX:COMPOSITE",
+                                    "interval": "D",
+                                    "timezone": "Etc/UTC",
+                                    "theme": "dark",
+                                    "style": "1",
+                                    "locale": "en",
+                                    "enable_publishing": false,
+                                    "hide_side_toolbar": false,
+                                    "allow_symbol_change": true,
+                                    "calendar": false,
+                                    "support_host": "https://www.tradingview.com"
+                                }
+                                </script>
+                            </div>
+                            <!-- TradingView Widget END -->
+                </div>
+                <div class="tombol_prediksi">
+                    <a href="Hasil_prediksi.html">
+                        <button onclick="onProcess()" class="tombol1" id="processButton">
+                        Prediksi Harga Wajar</button>
+                   </a>
+                </div>
+            </div>    
+            <div class="inputData">
+                    <div class="isian">
+                        <div class="judul">
+                            <h1>Rasio Keuangan 📑</h1><br>
+                        </div>
+                        <!-- Inputan untuk data rasio keuangan -->
+                        <div class="RasioKeuangan">
+                            <div class="PBV">
+                                <h2> PBV </h2>
+                                <input id="inputPBV" class="InputDataRasio" onkeypress="return hanyaAngka(event)"
+                                placeholder="Nilai PBV" oninput="formatNumber(this)"/> 
+                            </div>
+                            <div class="PER">
+                                <h2> PER </h2>
+                                <input id="inputPER" class="InputDataRasio" onkeypress="return hanyaAngka(event)"
+                                placeholder="Nilai PER" oninput="formatNumber(this)"/>
+                            </div>
+                            <div class="EPS">
+                                <h2> EPS (Rp)</h2>
+                                <input  id="inputEPS" class="InputDataRasio" onkeypress="return hanyaAngka(event)"
+                                placeholder="Nilai EPS" oninput="formatCurrency(this)"/>
+                            </div>
+                        </div>
+                        <!-- Inputan untuk data teknikal analisis -->
+                        <div class="TA">
+                                <h1> Teknikal Analisis 📈</h1>
+                            </a>
+                        </div>
+                        <div class="TeknikalAnalisis">
+                            <div class="SUPPORT">
+                                <h2> Area Support (Rp)</h2>
+                                <input id="inputSupport" class="InputTA" onkeypress="return hanyaAngka(event)"
+                                placeholder="Harga Area Support" oninput="formatCurrency(this)"/> 
+                            </div>
+                            <div class="RESISTANCE">
+                                <h2> Area Resistance (Rp)</h2>
+                                <input id="inputResistance" class="InputTA" onkeypress="return hanyaAngka(event)"
+                                placeholder="Harga Area Resistance" oninput="formatCurrency(this)"/> 
+                            </div>
+                            <div class="HARGA">
+                                <h2> Harga Saham Saat ini (Rp)</h2>
+                                <input id="inputHarga" class="InputTA" onkeypress="return hanyaAngka(event)"
+                                placeholder="Harga Sekarang" oninput="formatCurrency(this)"/> 
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <!-- Kolom bantuan dan fitur lainnya -->
+        <div class="bantuan">
+            <h1>Bantuan</h1>
+            <div class="isikonten">
+                <a href="Cara_PBV_PER.html" style="color: inherit; text-decoration: none;">
+                    <h1> Cara menemukan PBV, PER, dan EPS</h1><br>
+                </a>
+                <a href="Cara_TA.html" style="color: inherit; text-decoration: none;">
+                    <h1> Cara Menentukan area support dan area resistance</h1><br>     
+                </a>                   
+            </div>
+        </div>
+        <div class="ListIDX30">
+            <div class="isikonten">
+                <a href="IDX30.html" style="color: inherit; text-decoration: none;">
+                    <h1 class="idxnama"> List Saham IDX30</h1>
+                </a>                  
+            </div>
+        </div>
+        <div class="CekRasio">
+            <div class="CekRasioKeuangan">
+                <a href="https://finance.yahoo.com/" style="color: inherit; text-decoration: none;">
+                    <h1 class="idxnama"> Cek Rasio PBV, PER, dan EPS</h1>
+                </a>                  
+            </div>
+        </div>
+        <div class="ticker">
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                {
+                "symbols": [
+                {
+                    "description": "",
+                    "proName": "IDX:COMPOSITE"
+                },
+                {
+                    "description": "",
+                    "proName": "IDX:IDX30"
+                },
+                {
+                    "description": "",
+                    "proName": "IDX:LQ45"
+                },
+                {
+                    "description": "",
+                    "proName": "IDX:JII"
+                },
+                {
+                    "description": "",
+                    "proName": "FX_IDC:USDIDR"
+                },
+                {
+                    "description": "",
+                    "proName": "IDX:XISR"
+                }
+
+                ],
+                "showSymbolLogo": true,
+                "isTransparent": false,
+                "displayMode": "adaptive",  
+                "colorTheme": "dark",
+                "locale": "id"
+                 }
+                </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+        <script src="papaparse.min.js"></script>
+        <script type="application/javascript" src="index.js"> </script>
+    </body>
+</html>
